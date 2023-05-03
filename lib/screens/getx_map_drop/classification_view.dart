@@ -166,14 +166,13 @@ class _MatchTextViewState extends State<MatchTextView> {
                             child: GridView.builder(
                                 gridDelegate:
                                     SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 3,
-                                        mainAxisSpacing: 2,
-                                        crossAxisSpacing: 1,
-                                        childAspectRatio: 2.4
-                                        // childAspectRatio:
-                                        //     GetPlatform.isDesktop ? 3.20 : 2.0
-
-                                        ),
+                                  crossAxisCount: 3,
+                                  mainAxisSpacing: 2,
+                                  crossAxisSpacing: 1,
+                                  childAspectRatio:
+                                      GetPlatform.isDesktop ? 3.20 : 2.0,
+                                  //childAspectRatio: 2.4
+                                ),
                                 itemCount: _controller.allValues1.length,
                                 itemBuilder: (context, index) {
                                   return BasketDraggableWidgets(

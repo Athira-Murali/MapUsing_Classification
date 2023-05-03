@@ -252,24 +252,24 @@ class _MatchTextViewState extends State<MatchTextView> {
     final allVegList =
         vegetableItems.where((element) => element.type == list1[1]);
 
-    print("Expected fruit list: ${basket['fruit']}");
-    print("Expected veg list: ${basket['vegetable']}");
+    print("allFruitList: $allFruitList");
+    //print("Expected veg list: ${basket['vegetable']}");
 
-    final acceptedFruitList =
-        fruitItems.where((element) => basket['fruit']!.contains(element.name));
-    final acceptedVegList = vegetableItems
-        .where((element) => basket['vegetable']!.contains(element.name));
+    // final acceptedFruitList =
+    //     fruitItems.where((element) => basket['fruit']!.contains(element.name));
+    // final acceptedVegList = vegetableItems
+    //     .where((element) => basket['vegetable']!.contains(element.name));
 
-    print("Accepted fruit list: $acceptedFruitList");
-    print("Accepted veg list: $acceptedVegList");
+    // print("Accepted fruit list: $acceptedFruitList");
+    //print("Accepted veg list: $acceptedVegList");
 
-    if (allValues1.isNotEmpty) {
-      print("Incomplete");
+    if (allFruitList.length == fruitItems.length &&
+        allVegList.length == vegetableItems.length) {
+      print(" --SUCCESS---");
 
       return;
-    } else if (acceptedFruitList.length == allFruitList.length &&
-        acceptedVegList.length == allVegList.length) {
-      print(" --SUCCESS--");
+    } else if (allValues1.isNotEmpty) {
+      print("---------Incomplete-----");
     } else {
       print(" --FAILURE---");
     }
